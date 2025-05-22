@@ -1,0 +1,283 @@
+/* my global styles */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans";
+}
+:root {
+  --background-clr: #f4f7fd;
+  --primary-clr: #000112;
+  --secondary-clr: #fff;
+  --third-clr: #828fa3;
+  --accent-clr: #635fc7;
+}
+body {
+  background-color: var(--background-clr);
+}
+
+/* the modal styles */
+.modal { /* styles for making the modal pop up  */
+  display: none;/* to hide the modal when u open the website */
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: var(--secondary-clr);
+  margin: 15% auto; 
+  padding: 20px;
+  width: 343px; 
+  height: 444px;
+  position: absolute;/* to move the modal to the right place */
+  top: 43px;
+  left: 12px;
+  border-radius: 6px;
+}
+.modal-content h2{
+  font-size: 18px;
+  font-size: 700;
+  color: var(--primary-clr);
+}
+.close-button {
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.close-button:hover,
+.close-button:focus {/* hover effects for the closing button */
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-form{ /* container for the text field in the modal which is the form */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+.modal-form-divider{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.modal-form-divider label{
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--third-clr);
+}
+.modal-form-textarea{/* addeds spacing for the text fields */
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #8b8585;
+}
+.modal-form-textarea-descrip{/* addeds spacing for the text fields in the description area */
+  height: 112px;
+  border-radius: 5px;
+  border: 1px solid #8b8585;
+}
+#saveTask{ /* styles ofr the saving button */
+  height: 48px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--accent-clr);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--secondary-clr);
+  }
+#saveTask:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+  background-color: var(--primary-clr);
+}
+/* styles for the side bar */
+.side-bar {
+  display: none;
+}
+
+/* Main Layout header section */
+.main-header {
+  background-color: var(--secondary-clr);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding-left: 16px;
+}
+.main-header img {
+  width: 24px;
+  height: 25px;
+}
+.main-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* cards container */
+.cards-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 32px auto;
+}
+.cards {
+  margin-bottom: 30px;
+}
+
+/* the TODO, DOING and DONE heading styles */
+.task-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.task-heading span {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+.task-heading h4 {
+  color: var(--third-clr);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* the color styles for the TODO, DOING and DONE heading styles */
+.todo-clr {
+  background-color: #49c4e5;
+}
+.doing-clr {
+  background-color: #8471f2;
+}
+.done-clr {
+  background-color: #67e2ae;
+}
+
+/* the cards styles */
+.task-card {
+  background-color: var(--secondary-clr);
+  height: 60px;
+  padding: 19px;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-bottom: 21px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.task-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--accent-clr);
+  color: var(--secondary-clr);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+}
+
+/* media querys */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  /* modal container styles */
+   .modal-content{
+    left: 250px;
+    width: 400px;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  /* side bar styles */
+  .side-bar {
+    display: block;
+    background-color: var(--secondary-clr);
+    width: 250px;
+    border-right: 1px solid #e4ebfa;
+  }
+  .side-bar img {
+    width: 152.53px;
+    height: 25.22px;
+    margin-top: 37px;
+    margin-left: 27px;
+  }
+  .side-bar h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--third-clr);
+    margin-top: 50px;
+    margin-left: 27px;
+    padding: 0px 12px 0px 60px;
+  }
+  .side-bar button {
+    margin-top: 15px;
+    width: 190px;
+    height: 48px;
+    border-radius: 0 30px 30px 0;
+    border: none;
+    background-color: var(--accent-clr);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--secondary-clr);
+  }
+  .side-bar button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+    background-color: var(--primary-clr);
+  }
+  /* the header styles */
+  .main-header {
+    height: 96px;
+    border-bottom: 1px solid #e4ebfa;
+  }
+  .main-header img {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* styles for the modal container */
+    .modal-content{
+    width: 500px;
+    height: 455px;
+    left: 450px;
+    top: -80px;
+  }
+
+  /* side bar styles */
+  .side-bar {
+    display: block;
+    background-color: var(--secondary-clr);
+    width: 300px;
+  }
+  .side-bar button {
+    width: 276px;
+  }
+  .main-header {
+    height: 96px;
+    width: 102.9%;
+  }
+
+  .main-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

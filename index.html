@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <title>Kanban</title>
+</head>
+
+<body>
+  <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
+  <nav class="side-bar">
+    <div>
+      <img src="assets/logo-light.svg" alt="logo" />
+      <h4>ALL BOARDS (1)</h4>
+      <button>Launch Career</button>
+    </div>
+  </nav>
+
+  <div>
+    <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
+    <header class="main-header">
+      <img src="assets/favicon.svg" alt="favicon" />
+      <h2>Launch Career</h2>
+    </header>
+
+    <!-- Modal: the markup for the modal -->
+    <section id="taskModal" class="modal"><!-- the background container for the modal -->
+      <article class="modal-content"><!-- the container for the modal info -->
+        <div class="modal-header">
+          <h2>Task</h2>
+          <span id="closeModal" class="close-button">&times;</span>
+        </div>
+
+        <form class="modal-form">
+          <div class="modal-form-divider"><!-- container for dividing the label and textarea in the form -->
+            <label for="taskTitle">Title:</label>
+            <input class="modal-form-textarea" type="text" id="taskTitle" name="taskTitle" required>
+          </div>
+
+          <div class="modal-form-divider">
+            <label for="taskDescription">Description:</label>
+            <textarea class="modal-form-textarea-descrip" id="taskDescription" name="taskDescription"
+              required></textarea>
+          </div>
+
+          <div class="modal-form-divider">
+            <label for="taskStatus">Status:</label>
+            <select class="modal-form-textarea" id="taskStatus" name="taskStatus">
+              <option value="todo">To Do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <button type="submit" id="saveTask">Save</button>
+        </form>
+
+      </article>
+    </section>
+
+    <main class="cards-container">
+      <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
+      <section class="cards" data-status="todo">
+        <div class="task-heading">
+          <span class="todo-clr"></span>
+          <h4>TODO (5)</h4>
+        </div>
+        <!-- Tasks container for TODO -->
+        <ul class="task-list">
+          <li class="task-card">Launch Epic Career 🚀</li>
+          <li class="task-card">Learn Data Structures and Algorithms 📚</li>
+          <li class="task-card">Conquer React ⚛️</li>
+          <li class="task-card">Understand Databases ⚙️</li>
+          <li class="task-card">Crush Frameworks 🖼️</li>
+        </ul>
+      </section>
+
+      <!-- DOING Column -->
+      <section class="cards" data-status="doing">
+        <div class="task-heading">
+          <span class="doing-clr"></span>
+          <h4>DOING (3)</h4>
+        </div>
+        <!-- Tasks container for DOING -->
+        <ul class="task-list">
+          <li class="task-card">Master JavaScript 💛</li>
+          <li class="task-card">Keep on Going 🏆</li>
+          <li class="task-card">Never Give Up 🏆</li>
+        </ul>
+      </section>
+
+      <!-- DONE Column -->
+      <section class="cards" data-status="done">
+        <div class="task-heading">
+          <span class="done-clr"></span>
+          <h4>DONE (4)</h4>
+        </div>
+        <!-- Tasks container for DONE -->
+        <ul class="task-list">
+          <li class="task-card">Contribute to Open Source Projects 🌐</li>
+          <li class="task-card">Build Portfolio Projects 🛠️</li>
+          <li class="task-card">Explore ES6 Features 🚀</li>
+          <li class="task-card">Have fun 🥳</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
