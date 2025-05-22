@@ -30,24 +30,34 @@
     <!-- Edit Task Modal -->
     <section id="editTaskModal" class="modal">
       <article class="modal-content">
-        <button class="close" id="closeEditModal">&times;</button>
-        <h2>Edit Task</h2>
-        <form>
-          <label for="editTitle">Title:</label>
-          <input type="text" id="editTitle" />
+        <div class="modal-content-header">
+          <h2>Edit Task</h2>
+          <button class="close" id="closeEditModal">&times;</button>
+        </div>
+        <form class="modal-content-form">
+          <div class="form-diveders">
+            <label for="editTitle">Title:</label>
+            <input class="input-field" type="text" id="editTitle" />
+          </div>
 
-          <label for="editDescription">Description:</label>
-          <textarea id="editDescription"></textarea>
+          <div class="form-diveders">
+            <label for="editDescription">Description:</label>
+            <textarea class="Description-field" id="editDescription"></textarea>
+          </div>
 
-          <label for="editStatus">Status:</label>
-          <select id="editStatus">
-            <option value="todo">To Do</option>
-            <option value="doing">Doing</option>
-            <option value="done">Done</option>
-          </select>
+          <div class="form-diveders">
+            <label for="editStatus">Status:</label>
+            <select class="input-field" id="editStatus">
+              <option value="todo">To Do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
 
-          <button id="saveEdit">Save Changes</button>
-          <button id="deleteTask">Delete Task</button>
+          <div class="form-btn">
+            <button class="save-btn" id="saveNewTask">Save Changes</button>
+            <button class="delete-btn" id="deleteTask">Delete Task</button>
+          </div>
         </form>
       </article>
     </section>
@@ -55,24 +65,34 @@
     <!-- Add Task Modal -->
     <section id="addTaskModal" class="modal">
       <article class="modal-content">
-        <button class="close" id="closeAddModal">&times;</button>
-        <h2>Add Task</h2>
-        <form>
-          <label for="newTitle">Title:</label>
-          <input type="text" id="newTitle" />
+        <div class="modal-content-header">
+          <h2>Add New Task</h2>
+          <button class="close" id="closeAddModal">&times;</button>
+        </div>
+        <form class="modal-content-form">
+          <div class="form-diveders">
+            <label for="newTitle">Title:</label>
+            <input class="input-field" type="text" id="newTitle" />
+          </div>
 
-          <label for="newDescription">Description:</label>
-          <textarea id="newDescription"></textarea>
+          <div class="form-diveders ">
+            <label for="newDescription">Description:</label>
+            <textarea class="Description-field" id="newDescription"></textarea>
+          </div>
 
-          <label for="newStatus">Status:</label>
-          <select id="newStatus">
-            <option value="todo">To Do</option>
-            <option value="doing">Doing</option>
-            <option value="done">Done</option>
-          </select>
+          <div class="form-diveders">
+            <label for="newStatus">Status:</label>
+            <select class="input-field" id="newStatus">
+              <option value="todo">To Do</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
 
-          <button id="saveNewTask">Save Changes</button>
-          <button id="deleteTask">Delete Task</button>
+          <div class="form-btn">
+            <button class="save-btn" id="saveNewTask">Save Changes</button>
+            <button class="delete-btn" id="deleteTask">Delete Task</button>
+          </div>
         </form>
       </article>
     </section>
