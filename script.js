@@ -63,3 +63,43 @@ export function renderTasks() {
     taskLists[task.status].appendChild(li);
   });
 }
+
+import { tasks, saveTasks } from "./tasks.js";
+import { renderTasks } from "./render.js";
+
+/** Opens task edit modal */
+export function openEditModal(task) {
+  document.getElementById("editTitle").value = task.title;
+  document.getElementById("editDescription").value = task.description;
+  document.getElementById("editStatus").value = task.status;
+  document.getElementById("editTaskModal").style.display = "block";
+
+  window.currentEditingTaskId = task.id;
+}
+
+/** Saves edited task */
+export function saveEdit() {
+  const taskId = window.currentEditingTaskId;
+  const title = document.getElementById("editTitle").value;
+  const description = document.getElementById("editDescription").value;
+  const status = document.getElementById("editStatus").value;
+
+  const updatedTask = { id: taskId, title, description, status };
+  tasks.forEach((task, index) => {
+    if (task.id === taskId) tasks[index] = updatedTask;
+  });
+
+  saveTasks();
+  document.getElementById("editTaskModal").style.display = "none";
+  renderTasks();
+}
+
+/** Deletes a task */
+export function deleteTask(taskId) {
+  const index = tasks.findIndex((task) => task.id === taskId);
+  if (index > -1) tasks.splice(index, 1);
+
+  saveTasks();
+  document.getElementById("editTaskModal").style.display = "none";
+  renderTasks();
+}
