@@ -16,6 +16,7 @@
 body {
   background-color: var(--background-clr);
 }
+
 /* styles for the side bar */
 .side-bar {
   display: none;
@@ -137,6 +138,7 @@ margin-top: 18px;
 
 /* Main Layout header section */
 .main-header {
+  position: relative;
   background-color: var(--secondary-clr);
   display: flex;
   align-items: center;
@@ -152,6 +154,36 @@ margin-top: 18px;
   font-size: 18px;
   font-weight: 700;
 }
+.mobile-add-task {
+  font-size: 24px;
+  background-color: var(--accent-clr);
+  color: var(--secondary-clr);
+  position: absolute;
+  left: 313px;
+  width: 33px;
+  height: 33px;
+  border: none;
+  border-radius: 24px;
+  text-align: center;
+}
+.mobile-add-task span{
+  position: absolute;
+  width: 2px;
+  height: 13px;
+  top: -5px;
+  left: 8px;
+  font-size: 28px;
+}
+.mobile-add-task:hover {
+  transform: translateY(-5px);
+  background-color: var(--primary-clr);
+  color: var(--secondary-clr);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+}
+
+ .desktop-add-task {
+    display: none; /* Show on larger screens */
+  }
 
 /* cards container */
 .cards-container {
@@ -218,6 +250,31 @@ margin-top: 18px;
     display: grid;
     grid-template-columns: 1fr 3fr;
   }
+
+.mobile-add-task {
+    display: none; /* Hide on larger screens */
+
+  }
+  .desktop-add-task {
+    display: block; /* Show on larger screens */ 
+    position: absolute;
+    left: 400px;
+    width: 100px;
+    height: 28px;
+    background-color: var(--accent-clr);
+    border: none;
+    border-radius: 24px;
+  }
+  .desktop-add-task:hover {
+  transform: translateY(-5px);
+  background-color: var(--primary-clr);
+  color: var(--secondary-clr);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+}
+  .desktop-add-task span{
+    color: var(--secondary-clr);
+  }
+
   /*styles for modal content  */
   .modal-content{
     margin-left: 290px;
@@ -275,10 +332,20 @@ margin-top: 18px;
     display: none;
   }
 }
+
 @media (min-width: 1024px) {
   body {
     display: grid;
     grid-template-columns: 0.5fr 2fr;
+  }
+
+  .desktop-add-task {
+    display: block; /* Show on larger screens */ 
+    position: absolute;
+    left: 900px;
+    width: 150px;
+    height: 28px;
+
   }
 
    /*styles for modal content  */
